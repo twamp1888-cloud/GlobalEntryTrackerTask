@@ -1,0 +1,25 @@
+{
+  "name": "global-entry-checker-github-actions",
+  "version": "1.0.0",
+  "description": "Automated Global Entry appointment checker using GitHub Actions",
+  "main": "check-appointments.js",
+  "scripts": {
+    "check": "node check-appointments.js",
+    "test": "node check-appointments.js"
+  },
+  "keywords": [
+    "global-entry",
+    "appointments",
+    "automation",
+    "github-actions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "nodemailer": "^6.9.7"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
