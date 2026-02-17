@@ -2,10 +2,11 @@ name: Check Global Entry Appointments
 
 on:
   schedule:
-    # Run every 15 minutes
     - cron: '*/15 * * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
-
+  push:  # Add this - runs on every push too
+    branches:
+      - main
 jobs:
   check-appointments:
     runs-on: ubuntu-latest
