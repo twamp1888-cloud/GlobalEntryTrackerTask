@@ -20,8 +20,14 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Install dependencies
-        run: npm install
+      - name: Clear npm cache
+        run: npm cache clean --force
+      
+      - name: Install dependencies with retry
+        run: |
+          npm install --legacy-peer-deps || \
+          npm install --registry=https://registry.npmjs.org --legacy-peer-deps || \
+          npm install --registry=http://registry.npmjs.org --legacy-peer-deps
       
       - name: Check for appointments
         env:
